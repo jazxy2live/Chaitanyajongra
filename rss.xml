@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Chaitanya 'Jazzy' | Thoughts &amp; Essays</title>
+  <link>https://chaitanya.github.io/</link>
+  <description>Essays, notes, and thoughts on AR, human connection, and technology by Chaitanya 'Jazzy'.</description>
+  <language>en-us</language>
+  <lastBuildDate>Sat, 15 Mar 2025 12:00:00 GMT</lastBuildDate>
+  <atom:link href="https://chaitanya.github.io/rss.xml" rel="self" type="application/rss+xml" />
+  
+  <item>
+    <title>The AR Social Manifesto: Why Digital Layers Will Redefine Human Connection</title>
+    <link>https://chaitanya.github.io/essays/ar-social-manifesto.html</link>
+    <pubDate>Sat, 15 Mar 2025 12:00:00 GMT</pubDate>
+    <guid>https://chaitanya.github.io/essays/ar-social-manifesto.html</guid>
+    <description>The next revolution in human connection won't happen on our screens. It will happen in the space between us. For the past twenty years, we've been building digital worlds that pull us away from physical reality. It's time to flip the script.</description>
+  </item>
+
+  <item>
+    <title>The Age of Polymathy: Why Specialists Will Be Outpaced</title>
+    <link>https://chaitanya.github.io/essays/polymathy-age.html</link>
+    <pubDate>Wed, 28 Feb 2025 12:00:00 GMT</pubDate>
+    <guid>https://chaitanya.github.io/essays/polymathy-age.html</guid>
+    <description>In a world of increasing complexity and rapid change, the ability to synthesize knowledge across domains is becoming more valuable than deep expertise in a single area. This essay explores why polymaths will have an edge in the coming decades.</description>
+  </item>
+
+  <item>
+    <title>Gen Z Builders: Creating Without Permission</title>
+    <link>https://chaitanya.github.io/essays/gen-z-builders.html</link>
+    <pubDate>Wed, 17 Jan 2025 12:00:00 GMT</pubDate>
+    <guid>https://chaitanya.github.io/essays/gen-z-builders.html</guid>
+    <description>My generation is bypassing traditional gatekeepers and building without waiting for permission. This essay examines the cultural and technological forces enabling teenage founders and creators to make an impact.</description>
+  </item>
+
+  <item>
+    <title>The Founder Mindset: Mental Models for Survival</title>
+    <link>https://chaitanya.github.io/essays/founder-mindset.html</link>
+    <pubDate>Tue, 5 Dec 2024 12:00:00 GMT</pubDate>
+    <guid>https://chaitanya.github.io/essays/founder-mindset.html</guid>
+    <description>The mental frameworks that have helped me navigate the challenges of building something from nothing. From managing uncertainty to preserving sanity in the face of constant setbacks.</description>
+  </item>
+</channel>
+</rss> 
