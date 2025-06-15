@@ -35,6 +35,9 @@
   <!-- RSS Feed -->
   <link rel="alternate" type="application/rss+xml" title="Chaitanya Jongra - Essays" href="/rss.xml">
   
+  <!-- Netlify Identity Widget -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1CJBY3D2L4"></script>
   <script>
@@ -51,6 +54,7 @@
       <li><a href="essays.html">Essays</a></li>
       <li><a href="ideas.html">Ideas</a></li>
       <li><a href="books.html">Books</a></li>
+      <li><a href="recommendations.html">Recommendations</a></li>
       <li><a href="interests.html">Interests</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -87,8 +91,32 @@
     </div>
 
     <div class="footer">
-      <p>© 2025 Chaitanya Jongra</p>
+      <div class="footer-content">
+        <div class="footer-quote">
+          "Built with curiosity, maintained sporadically"
+        </div>
+        <div class="footer-meta">
+          <span>© 2025 Chaitanya Jongra</span>
+          <span id="last-updated">Last updated: Loading...</span>
+        </div>
+      </div>
     </div>
+    
+    <script>
+      // Add last updated timestamp
+      document.getElementById('last-updated').textContent = 'Last updated: ' + new Date().toLocaleDateString();
+      
+      // Netlify Identity
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </div>
 </body>
 </html>
