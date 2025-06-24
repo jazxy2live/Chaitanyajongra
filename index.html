@@ -35,8 +35,6 @@
   <!-- RSS Feed -->
   <link rel="alternate" type="application/rss+xml" title="Chaitanya Jongra - Essays" href="/rss.xml">
   
-  <!-- Netlify Identity Widget -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1CJBY3D2L4"></script>
@@ -105,17 +103,6 @@
     <script>
       // Add last updated timestamp
       document.getElementById('last-updated').textContent = 'Last updated: ' + new Date().toLocaleDateString();
-      
-      // Netlify Identity
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
     </script>
   </div>
 </body>

@@ -3,6 +3,26 @@
 /* Import retro fonts */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Berkeley+Mono:wght@400&display=swap');
 
+/* Mobile optimizations */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* Improve touch interactions */
+a, button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #fffffa;
   background-image: url('../images/compressed/wallpaperflare.com_wallpaper copy.jpg');
@@ -216,7 +236,7 @@ blockquote {
     position: static;
     width: 100%;
     height: auto;
-    padding: 15px 20px;
+    padding: 20px 20px;
     background-color: #f5f5f5;
     border-right: none;
     border-bottom: 1px solid #ddd;
@@ -226,28 +246,46 @@ blockquote {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 8px;
   }
   
   .sidebar li {
-    margin: 0 15px 10px 0;
+    margin: 0;
   }
   
   .sidebar a {
     font-size: 14px;
-    padding: 5px 0;
+    padding: 12px 16px;
+    display: block;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.2s ease;
+  }
+  
+  .sidebar a:hover {
+    background-color: #f0f0f0;
+    text-decoration: none;
+    transform: translateY(-1px);
   }
   
   .main-content {
     margin-left: 0;
-    padding: 20px 15px;
+    padding: 30px 20px;
   }
   
   .profile-img {
-    width: 200px;
-    height: 200px;
-    max-width: 200px;
-    max-height: 200px;
-    margin: 0 0 20px 0;
+    width: 220px;
+    height: 220px;
+    max-width: 220px;
+    max-height: 220px;
+    margin: 20px auto 30px auto;
     display: block;
   }
   
@@ -257,85 +295,139 @@ blockquote {
   }
   
   .footer-content {
-    padding: 0 15px;
+    padding: 0 20px;
+  }
+  
+  .footer-meta {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
   }
   
   h1 {
-    font-size: 20px;
-    margin-bottom: 15px;
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
   }
   
   h2 {
+    font-size: 18px;
+    margin: 30px 0 20px 0;
+  }
+  
+  h3 {
     font-size: 16px;
     margin: 25px 0 15px 0;
   }
   
-  h3 {
+  p {
     font-size: 14px;
-    margin: 20px 0 10px 0;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  ul, li {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .section {
+    margin: 35px 0;
+  }
+  
+  .footer {
+    margin-top: 50px;
+  }
+  
+  /* Better link touch targets */
+  a {
+    padding: 2px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 20px 16px;
+  }
+  
+  .sidebar {
+    padding: 16px;
+  }
+  
+  .sidebar ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  
+  .sidebar a {
+    padding: 14px 20px;
+    font-size: 15px;
+    min-height: 48px;
+  }
+  
+  .sidebar li {
+    margin: 0;
+  }
+  
+  .profile-img {
+    width: 180px;
+    height: 180px;
+    max-width: 180px;
+    max-height: 180px;
+    margin: 20px auto 25px auto;
+    display: block;
+  }
+  
+  h1 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  
+  h2 {
+    font-size: 17px;
+    margin: 25px 0 16px 0;
+  }
+  
+  h3 {
+    font-size: 15px;
+    margin: 20px 0 12px 0;
   }
   
   p {
     font-size: 13px;
-    line-height: 1.5;
+    line-height: 1.7;
     margin-bottom: 18px;
+  }
+  
+  ul, li {
+    font-size: 13px;
+    line-height: 1.7;
   }
   
   .section {
     margin: 30px 0;
   }
   
-  .footer {
-    margin-top: 40px;
-    font-size: 11px;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-content {
-    padding: 15px 10px;
-  }
-  
-  .sidebar {
-    padding: 10px 15px;
-  }
-  
-  .sidebar ul {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .sidebar li {
-    margin: 0 0 8px 0;
-  }
-  
-  .profile-img {
-    width: 150px;
-    height: 150px;
-    max-width: 150px;
-    max-height: 150px;
-    margin: 0 0 20px 0;
-    display: block;
-  }
-  
-  h1 {
-    font-size: 18px;
-    text-align: center;
-  }
-  
-  .section {
-    margin: 25px 0;
-  }
-  
   body {
+    font-size: 13px;
+  }
+  
+  .footer-content {
+    padding: 0 16px;
+  }
+  
+  .footer-quote {
     font-size: 12px;
   }
   
-  h2 {
-    font-size: 15px;
+  .footer-meta {
+    font-size: 11px;
   }
   
-  h3 {
-    font-size: 14px;
+  /* Improve background on small screens */
+  body {
+    background-attachment: scroll;
   }
 }
