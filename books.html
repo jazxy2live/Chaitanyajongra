@@ -71,7 +71,16 @@
     // Import Firebase functions
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
     import { getFirestore, doc, getDoc, setDoc, updateDoc, increment } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
-    import { firebaseConfig } from './firebase-config.js';
+
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDjzxdtrfE6gqFSPyUfEvLMp1XHp_d5jsg",
+      authDomain: "chaitanyajongra-cf373.firebaseapp.com",
+      projectId: "chaitanyajongra-cf373",
+      storageBucket: "chaitanyajongra-cf373.firebasestorage.app",
+      messagingSenderId: "986005462476",
+      appId: "1:986005462476:web:2c110f3760f9fc01485169"
+    };
 
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
