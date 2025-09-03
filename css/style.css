@@ -362,13 +362,7 @@ blockquote {
     margin-top: 6px;
   }
   
-  .profile-wrapper:hover .profile-img {
-    filter: none;
-  }
-  
-  .profile-wrapper:hover .profile-hover-text {
-    opacity: 1;
-  }
+    /* Mobile override removed - no hover effects */
   
   /* Tesla image height tweak for very small screens */
   .hero-flex .tesla-img {
@@ -469,11 +463,12 @@ blockquote {
 }
 
 /* Specific spacing for book list */
-.books-list li {
+.books-list li,
+.movies-list li {
   margin: 20px 0;
   line-height: 1.6;
 }
-
+  
 /* Tesla image large cinematic */
 .tesla-img {
   width: 100%;
@@ -486,65 +481,55 @@ blockquote {
   object-fit: cover;
 }
 
-/* Interactive profile image hover */
+/* Simple profile image wrapper - no hover effects */
 .profile-wrapper {
   position: relative;
   display: inline-block;
 }
 
-.profile-wrapper .profile-img {
-  transition: filter 0.4s ease;
-}
-
-.profile-wrapper:hover .profile-img {
-  filter: brightness(0.75) blur(1px);
-}
-
 .profile-hover-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   font-family: 'IBM Plex Mono', monospace;
-  color: #fff;
+  color: #666;
   font-size: 12px;
   text-align: center;
-  letter-spacing: 2px;
-  line-height: 1.4;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-}
-
-.profile-wrapper:hover .profile-hover-text {
-  opacity: 0.9;
+  letter-spacing: 1px;
+  margin-top: 8px;
 }
 
 /* Two-column hero layout */
 .hero-flex {
+  display: -webkit-flex;
   display: flex;
   min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 .hero-flex .tesla-img {
+  -webkit-flex: 0 0 55%;
   flex: 0 0 55%;
   width: 55%;
   height: 100vh;
+  height: -webkit-fill-available;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
 .hero-text {
+  -webkit-flex: 1;
   flex: 1;
   padding: 60px 40px 40px 40px;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 @media (max-width: 768px) {
   .hero-flex {
+    -webkit-flex-direction: column;
     flex-direction: column;
   }
   .hero-flex .tesla-img {
     width: 100%;
+    height: 60vh;
     height: 60vh;
   }
   .hero-text {
@@ -557,4 +542,75 @@ blockquote {
   max-width: none;
   padding: 0;
   overflow: hidden;
+}
+
+/* Upvote functionality */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.upvote-container {
+  display: flex;
+  align-items: center;
+}
+
+.upvote-btn {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-family: 'IBM Plex Mono', monospace;
+  transition: all 0.2s ease;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.upvote-btn:hover {
+  background-color: #f0f0f0;
+  border-color: #999;
+  transform: translateY(-1px);
+}
+
+.upvote-btn:active {
+  transform: translateY(0);
+  background-color: #e0e0e0;
+}
+
+.upvote-arrow {
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+}
+
+.upvote-count {
+  font-size: 11px;
+  color: #666;
+  font-weight: normal;
+}
+
+/* Mobile adjustments for upvote */
+@media (max-width: 768px) {
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .upvote-container {
+    align-self: flex-end;
+  }
+  
+  .upvote-btn {
+    min-width: 48px;
+    min-height: 48px;
+    padding: 10px 14px;
+  }
 }

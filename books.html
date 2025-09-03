@@ -11,9 +11,8 @@
 <body>
   <div class="sidebar">
     <ul>
-      <li><a href="index.html">About</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="essays.html">Essays</a></li>
-      <li><a href="ideas.html">Ideas</a></li>
       <li><a href="books.html">Books</a></li>
       <li><a href="recommendations.html">Recommendations</a></li>
       <li><a href="interests.html">Interests</a></li>
@@ -25,7 +24,15 @@
     <h1><a href="index.html">Chaitanya Jongra</a></h1>
 
     <div class="section">
-      <h2>Books</h2>
+      <div class="section-header">
+        <h2>Books</h2>
+        <div class="upvote-container">
+          <button class="upvote-btn" onclick="upvote('books')">
+            <span class="upvote-arrow">↑</span>
+            <span class="upvote-count" id="books-count">0</span>
+          </button>
+        </div>
+      </div>
       
       <ul class="books-list">
         <li>How Innovation Works – Matt Ridley</li>
@@ -58,5 +65,75 @@
       </ul>
     </div>
   </div>
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    // Import Firebase functions
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+    import { getFirestore, doc, getDoc, setDoc, updateDoc, increment } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+    import { firebaseConfig } from './firebase-config.js';
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Global upvote function
+    window.upvote = async function(page) {
+      const hasVoted = localStorage.getItem(page + '-voted');
+      if (hasVoted === 'true') {
+        return; // User already voted
+      }
+      
+      try {
+        const countElement = document.getElementById(page + '-count');
+        const docRef = doc(db, 'upvotes', page);
+        
+        // Update count in Firebase
+        await setDoc(docRef, {
+          count: increment(1)
+        }, { merge: true });
+        
+        // Mark as voted locally
+        localStorage.setItem(page + '-voted', 'true');
+        
+        // Get updated count and display
+        const docSnap = await getDoc(docRef);
+        const newCount = docSnap.exists() ? docSnap.data().count : 1;
+        countElement.textContent = newCount;
+        
+        // Visual feedback
+        const button = countElement.closest('.upvote-btn');
+        button.style.backgroundColor = '#e8f5e8';
+        button.style.borderColor = '#4caf50';
+        button.style.cursor = 'default';
+      } catch (error) {
+        console.error('Error upvoting:', error);
+      }
+    };
+
+    // Load current count on page load
+    document.addEventListener('DOMContentLoaded', async function() {
+      try {
+        const countElement = document.getElementById('books-count');
+        const docRef = doc(db, 'upvotes', 'books');
+        const docSnap = await getDoc(docRef);
+        
+        const currentCount = docSnap.exists() ? docSnap.data().count : 0;
+        countElement.textContent = currentCount;
+        
+        // Check if user already voted
+        const hasVoted = localStorage.getItem('books-voted');
+        if (hasVoted === 'true') {
+          const button = countElement.closest('.upvote-btn');
+          button.style.backgroundColor = '#e8f5e8';
+          button.style.borderColor = '#4caf50';
+          button.style.cursor = 'default';
+        }
+      } catch (error) {
+        console.error('Error loading count:', error);
+        document.getElementById('books-count').textContent = '0';
+      }
+    });
+  </script>
 </body>
 </html> 
