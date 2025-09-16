@@ -93,6 +93,7 @@ h1 {
   font-weight: normal;
   margin: 0 0 20px 0;
   color: #000;
+  letter-spacing: -0.5px;
 }
 
 h1 a {
@@ -116,6 +117,8 @@ h3 {
 p {
   margin: 15px 0;
   text-align: left;
+  line-height: 1.6;
+  color: #222;
 }
 
 a {
@@ -489,11 +492,12 @@ blockquote {
 
 .profile-hover-text {
   font-family: 'IBM Plex Mono', monospace;
-  color: #666;
-  font-size: 12px;
+  color: #888;
+  font-size: 11px;
   text-align: center;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   margin-top: 8px;
+  text-transform: uppercase;
 }
 
 /* Two-column hero layout */
@@ -501,7 +505,6 @@ blockquote {
   display: -webkit-flex;
   display: flex;
   min-height: 100vh;
-  min-height: -webkit-fill-available;
 }
 
 .hero-flex .tesla-img {
@@ -509,9 +512,12 @@ blockquote {
   flex: 0 0 55%;
   width: 55%;
   height: 100vh;
-  height: -webkit-fill-available;
+  min-height: 100vh;
+  max-height: 100vh;
+  -webkit-object-fit: cover;
   -o-object-fit: cover;
   object-fit: cover;
+  display: block;
 }
 
 .hero-text {
@@ -544,73 +550,3 @@ blockquote {
   overflow: hidden;
 }
 
-/* Upvote functionality */
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.upvote-container {
-  display: flex;
-  align-items: center;
-}
-
-.upvote-btn {
-  background: none;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 8px 12px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  font-family: 'IBM Plex Mono', monospace;
-  transition: all 0.2s ease;
-  min-width: 44px;
-  min-height: 44px;
-}
-
-.upvote-btn:hover {
-  background-color: #f0f0f0;
-  border-color: #999;
-  transform: translateY(-1px);
-}
-
-.upvote-btn:active {
-  transform: translateY(0);
-  background-color: #e0e0e0;
-}
-
-.upvote-arrow {
-  font-size: 14px;
-  font-weight: bold;
-  color: #666;
-}
-
-.upvote-count {
-  font-size: 11px;
-  color: #666;
-  font-weight: normal;
-}
-
-/* Mobile adjustments for upvote */
-@media (max-width: 768px) {
-  .section-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-  
-  .upvote-container {
-    align-self: flex-end;
-  }
-  
-  .upvote-btn {
-    min-width: 48px;
-    min-height: 48px;
-    padding: 10px 14px;
-  }
-}
