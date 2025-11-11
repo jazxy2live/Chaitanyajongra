@@ -582,23 +582,33 @@ hr {
 
 @media (max-width: 768px) {
   .hero-flex {
-    -webkit-flex-direction: column;
-    flex-direction: column;
     display: block;
+    min-height: auto;
   }
+  
   .hero-flex .tesla-img {
-    position: relative;
+    position: static;
     width: 100%;
     height: 50vh;
-    margin-left: 0;
-    left: 0;
+    min-height: 300px;
+    margin: 0;
+    left: auto;
     object-position: center center;
+    flex-shrink: 1;
   }
+  
   .hero-text {
     width: 100%;
     margin-left: 0;
-    padding: 30px 20px;
+    padding: 30px 20px 50px 20px;
     background-color: #fffffa;
+    min-height: auto;
+  }
+  
+  .hero-text h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
   }
 }
 
@@ -678,6 +688,17 @@ hr {
 
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
+  .profile-wrapper {
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+  
+  .profile-img {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+  
   .glass-intro {
     margin: 25px 0 35px 0;
     padding: 20px 0;
@@ -685,12 +706,14 @@ hr {
   
   .glass-intro p {
     font-size: 15px;
-    line-height: 1.6;
+    line-height: 1.7;
+    text-align: center;
   }
   
   .not-statements h2 {
     font-size: 13px;
     margin-bottom: 30px;
+    text-align: center;
   }
   
   .not-item {
@@ -710,6 +733,24 @@ hr {
 }
 
 @media (max-width: 480px) {
+  .hero-flex .tesla-img {
+    height: 40vh;
+    min-height: 250px;
+  }
+  
+  .hero-text {
+    padding: 25px 16px 40px 16px;
+  }
+  
+  .hero-text h1 {
+    font-size: 22px;
+  }
+  
+  .profile-img {
+    width: 180px;
+    height: 180px;
+  }
+  
   .glass-intro {
     margin: 20px 0 30px 0;
     padding: 18px 0;
@@ -717,11 +758,14 @@ hr {
   
   .glass-intro p {
     font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
   }
   
   .not-statements h2 {
     font-size: 12px;
     margin-bottom: 25px;
+    text-align: center;
   }
   
   .not-item {
