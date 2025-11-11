@@ -289,6 +289,7 @@ hr {
   .main-content {
     margin-left: 0;
     padding: 30px 20px;
+    max-width: 100%;
   }
   
   .profile-img {
@@ -380,6 +381,20 @@ hr {
   .hero-flex .tesla-img {
     height: 50vh;
   }
+  
+  /* Mobile profile adjustments */
+  .profile-wrapper {
+    justify-content: center;
+  }
+  
+  .profile-img {
+    margin: 0 auto;
+  }
+  
+  /* Center heading on mobile */
+  .hero-text h1 {
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -470,7 +485,16 @@ hr {
   
   /* Tesla image height tweak for very small screens */
   .hero-flex .tesla-img {
-    height: 45vh;
+    height: 40vh;
+  }
+  
+  .hero-text {
+    padding: 25px 16px;
+  }
+  
+  .hero-text h1 {
+    font-size: 20px;
+    text-align: center;
   }
 }
 
@@ -560,17 +584,20 @@ hr {
   .hero-flex {
     -webkit-flex-direction: column;
     flex-direction: column;
+    display: block;
   }
   .hero-flex .tesla-img {
     position: relative;
     width: 100%;
-    height: 60vh;
+    height: 50vh;
     margin-left: 0;
+    left: 0;
     object-position: center center;
   }
   .hero-text {
+    width: 100%;
     margin-left: 0;
-    padding: 20px;
+    padding: 30px 20px;
     background-color: #fffffa;
   }
 }
@@ -580,6 +607,12 @@ hr {
   max-width: none;
   padding: 0;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .hero-page {
+    overflow: visible;
+  }
 }
 
 /* Glass concept styling */
