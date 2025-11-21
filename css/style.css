@@ -14,7 +14,8 @@ html {
 }
 
 /* Improve touch interactions */
-a, button {
+a,
+button {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -252,18 +253,18 @@ hr {
     border-right: none;
     border-bottom: 1px solid #ddd;
   }
-  
+
   .sidebar ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 8px;
   }
-  
+
   .sidebar li {
     margin: 0;
   }
-  
+
   .sidebar a {
     font-size: 14px;
     padding: 12px 16px;
@@ -279,19 +280,19 @@ hr {
     text-align: center;
     transition: all 0.2s ease;
   }
-  
+
   .sidebar a:hover {
     background-color: #f0f0f0;
     text-decoration: none;
     transform: translateY(-1px);
   }
-  
+
   .main-content {
     margin-left: 0;
     padding: 30px 20px;
     max-width: 100%;
   }
-  
+
   .profile-img {
     width: 220px;
     height: 220px;
@@ -300,72 +301,73 @@ hr {
     margin: 20px auto 30px auto;
     display: block;
   }
-  
+
   .footer {
     margin-left: 0;
     width: 100%;
   }
-  
+
   .footer-content {
     padding: 0 20px;
   }
-  
+
   .footer-meta {
     flex-direction: column;
     gap: 8px;
     text-align: center;
   }
-  
+
   h1 {
     font-size: 22px;
     margin-bottom: 20px;
     text-align: center;
   }
-  
+
   h2 {
     font-size: 18px;
     margin: 30px 0 20px 0;
   }
-  
+
   h3 {
     font-size: 16px;
     margin: 25px 0 15px 0;
   }
-  
+
   p {
     font-size: 14px;
     line-height: 1.6;
     margin-bottom: 20px;
   }
-  
-  ul, li {
+
+  ul,
+  li {
     font-size: 14px;
     line-height: 1.6;
   }
-  
+
   .section {
     margin: 35px 0;
   }
-  
+
   .footer {
     margin-top: 50px;
   }
-  
+
   /* Better link touch targets */
   a {
     padding: 2px 0;
   }
-  
+
   .right-align {
     margin-right: 20px;
     margin-left: 20px;
   }
-  
+
   /* Allow scrolling on stacked hero layout */
   .hero-page {
     overflow: visible;
   }
-  
+
   /* Show name tag under profile image since hover isn't available */
   .profile-hover-text {
     position: static;
@@ -374,23 +376,23 @@ hr {
     color: #000;
     margin-top: 6px;
   }
-  
-    /* Mobile override removed - no hover effects */
-  
+
+  /* Mobile override removed - no hover effects */
+
   /* Tesla image height tweak for very small screens */
   .hero-flex .tesla-img {
     height: 50vh;
   }
-  
+
   /* Mobile profile adjustments */
   .profile-wrapper {
     justify-content: center;
   }
-  
+
   .profile-img {
     margin: 0 auto;
   }
-  
+
   /* Center heading on mobile */
   .hero-text h1 {
     text-align: center;
@@ -401,27 +403,27 @@ hr {
   .main-content {
     padding: 20px 16px;
   }
-  
+
   .sidebar {
     padding: 16px;
   }
-  
+
   .sidebar ul {
     flex-direction: column;
     align-items: stretch;
     gap: 8px;
   }
-  
+
   .sidebar a {
     padding: 14px 20px;
     font-size: 15px;
     min-height: 48px;
   }
-  
+
   .sidebar li {
     margin: 0;
   }
-  
+
   .profile-img {
     width: 180px;
     height: 180px;
@@ -430,68 +432,69 @@ hr {
     margin: 20px auto 25px auto;
     display: block;
   }
-  
+
   h1 {
     font-size: 20px;
     text-align: center;
     margin-bottom: 16px;
   }
-  
+
   h2 {
     font-size: 17px;
     margin: 25px 0 16px 0;
   }
-  
+
   h3 {
     font-size: 15px;
     margin: 20px 0 12px 0;
   }
-  
+
   p {
     font-size: 13px;
     line-height: 1.7;
     margin-bottom: 18px;
   }
-  
-  ul, li {
+
+  ul,
+  li {
     font-size: 13px;
     line-height: 1.7;
   }
-  
+
   .section {
     margin: 30px 0;
   }
-  
+
   body {
     font-size: 13px;
   }
-  
+
   .footer-content {
     padding: 0 16px;
   }
-  
+
   .footer-quote {
     font-size: 12px;
   }
-  
+
   .footer-meta {
     font-size: 11px;
   }
-  
+
   /* Improve background on small screens */
   body {
     background-attachment: scroll;
   }
-  
+
   /* Tesla image height tweak for very small screens */
   .hero-flex .tesla-img {
     height: 40vh;
   }
-  
+
   .hero-text {
     padding: 25px 16px;
   }
-  
+
   .hero-text h1 {
     font-size: 20px;
     text-align: center;
@@ -504,7 +507,7 @@ hr {
   margin: 20px 0;
   line-height: 1.6;
 }
-  
+
 /* Tesla image base styling */
 .tesla-img {
   width: 100%;
@@ -585,7 +588,7 @@ hr {
     display: block;
     min-height: auto;
   }
-  
+
   .hero-flex .tesla-img {
     position: static;
     width: 100%;
@@ -596,7 +599,7 @@ hr {
     object-position: center center;
     flex-shrink: 1;
   }
-  
+
   .hero-text {
     width: 100%;
     margin-left: 0;
@@ -604,7 +607,7 @@ hr {
     background-color: #fffffa;
     min-height: auto;
   }
-  
+
   .hero-text h1 {
     font-size: 24px;
     text-align: center;
@@ -692,40 +695,40 @@ hr {
     justify-content: center;
     margin-bottom: 25px;
   }
-  
+
   .profile-img {
     width: 200px;
     height: 200px;
     margin: 0 auto;
   }
-  
+
   .glass-intro {
     margin: 25px 0 35px 0;
     padding: 20px 0;
   }
-  
+
   .glass-intro p {
     font-size: 15px;
     line-height: 1.7;
     text-align: center;
   }
-  
+
   .not-statements h2 {
     font-size: 13px;
     margin-bottom: 30px;
     text-align: center;
   }
-  
+
   .not-item {
     margin: 30px 0;
     padding: 25px 0;
   }
-  
+
   .not-item h3 {
     font-size: 13px;
     margin-bottom: 12px;
   }
-  
+
   .not-item p {
     font-size: 14px;
     line-height: 1.7;
@@ -737,50 +740,168 @@ hr {
     height: 40vh;
     min-height: 250px;
   }
-  
+
   .hero-text {
     padding: 25px 16px 40px 16px;
   }
-  
+
   .hero-text h1 {
     font-size: 22px;
   }
-  
+
   .profile-img {
     width: 180px;
     height: 180px;
   }
-  
+
   .glass-intro {
     margin: 20px 0 30px 0;
     padding: 18px 0;
   }
-  
+
   .glass-intro p {
     font-size: 14px;
     line-height: 1.6;
     text-align: center;
   }
-  
+
   .not-statements h2 {
     font-size: 12px;
     margin-bottom: 25px;
     text-align: center;
   }
-  
+
   .not-item {
     margin: 25px 0;
     padding: 20px 0;
   }
-  
+
   .not-item h3 {
     font-size: 12px;
     margin-bottom: 10px;
   }
-  
+
   .not-item p {
     font-size: 13px;
     line-height: 1.7;
   }
 }
 
+
+/* Project/Idea Cards */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.project-card {
+  padding: 30px;
+  border: 1px solid #eee;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  border-color: #ddd;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 15px;
+}
+
+.project-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.project-status {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+  border: 1px solid #eee;
+  padding: 4px 8px;
+  border-radius: 2px;
+}
+
+.project-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #444;
+  margin: 0;
+}
+
+.project-date {
+  font-size: 12px;
+  color: #888;
+  font-family: 'IBM Plex Mono', monospace;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.project-tags {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-tag {
+  font-size: 11px;
+  color: #666;
+  background-color: #f9f9f9;
+  padding: 4px 8px;
+  border-radius: 2px;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Mobile responsive adjustments for Projects */
+@media (max-width: 768px) {
+  .project-grid {
+    gap: 30px;
+    margin-top: 30px;
+  }
+
+  .project-card {
+    padding: 25px;
+  }
+
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .project-status {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-grid {
+    gap: 25px;
+  }
+
+  .project-card {
+    padding: 20px;
+  }
+
+  .project-title {
+    font-size: 16px;
+  }
+
+  .project-desc {
+    font-size: 13px;
+  }
+}
