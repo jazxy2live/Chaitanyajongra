@@ -905,3 +905,216 @@ hr {
     font-size: 13px;
   }
 }
+
+
+/* =============================================
+   FILMS PAGE STYLES
+   ============================================= */
+
+/* Films intro section */
+.films-intro {
+  margin-bottom: 50px;
+}
+
+.films-tagline {
+  font-size: 15px;
+  color: #555;
+  font-style: italic;
+  line-height: 1.7;
+  margin-top: 15px;
+  padding-left: 20px;
+  border-left: 2px solid #ddd;
+}
+
+/* Films grid */
+.films-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  margin: 50px 0;
+}
+
+/* Film card */
+.film-card {
+  position: relative;
+  background: linear-gradient(135deg, #fafafa 0%, #fff 100%);
+  border: 1px solid #e8e8e8;
+  padding: 35px 30px 30px 30px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.film-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  border-color: #d0d0d0;
+}
+
+/* Film number */
+.film-number {
+  position: absolute;
+  top: -15px;
+  left: 30px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: #999;
+  background: #fff;
+  padding: 5px 12px;
+  letter-spacing: 2px;
+  border: 1px solid #eee;
+}
+
+/* Video container - 16:9 aspect ratio */
+.film-video-wrapper {
+  margin: 25px 0 20px 0;
+}
+
+.film-video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  background: #000;
+  border-radius: 2px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.film-video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Film info */
+.film-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.film-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.film-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* Films note section */
+.films-note {
+  margin-top: 60px;
+  padding: 30px;
+  background: linear-gradient(135deg, #f8f8f8 0%, #fafafa 100%);
+  border-left: 3px solid #333;
+}
+
+.films-note p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #444;
+  margin: 0;
+}
+
+.films-note em {
+  color: #222;
+  font-weight: 500;
+}
+
+/* Mobile responsive for Films */
+@media (max-width: 768px) {
+  .films-grid {
+    gap: 50px;
+    margin: 40px 0;
+  }
+
+  .film-card {
+    padding: 30px 25px 25px 25px;
+  }
+
+  .film-number {
+    left: 25px;
+    font-size: 11px;
+  }
+
+  .film-title {
+    font-size: 16px;
+  }
+
+  .films-tagline {
+    font-size: 14px;
+    padding-left: 15px;
+  }
+
+  .films-note {
+    padding: 25px;
+    margin-top: 50px;
+  }
+
+  .films-note p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .films-grid {
+    gap: 40px;
+    margin: 35px 0;
+  }
+
+  .film-card {
+    padding: 25px 18px 20px 18px;
+  }
+
+  .film-number {
+    left: 18px;
+    top: -12px;
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+
+  .film-info {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .film-title {
+    font-size: 15px;
+  }
+
+  .film-meta {
+    font-size: 10px;
+  }
+
+  .films-tagline {
+    font-size: 13px;
+    padding-left: 12px;
+  }
+
+  .films-note {
+    padding: 20px;
+    margin-top: 40px;
+  }
+
+  .films-note p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+}
