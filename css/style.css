@@ -508,6 +508,12 @@ hr {
   line-height: 1.6;
 }
 
+/* Favorite films styling */
+.favorite {
+  color: #0066cc;
+  font-weight: 500;
+}
+
 /* Tesla image base styling */
 .tesla-img {
   width: 100%;
