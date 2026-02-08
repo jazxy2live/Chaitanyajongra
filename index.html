@@ -67,8 +67,64 @@
 
         <div class="section">
           <div class="profile-wrapper">
-            <img src="images/chaitanya.jpg" alt="Chaitanya Jongra" class="profile-img">
+            <div class="profile-carousel">
+              <div class="carousel-slides">
+                <img src="images/DSC00048.JPG" alt="Chaitanya as a kid" class="carousel-img active">
+                <img src="images/DSC00049.JPG" alt="Chaitanya as a kid" class="carousel-img">
+                <img src="images/IMG_20190820_224806.jpg" alt="Chaitanya as a kid" class="carousel-img">
+                <img src="images/DSC00217.JPG" alt="Chaitanya as a kid" class="carousel-img">
+                <img src="images/chaitanya.jpg" alt="Chaitanya Jongra" class="carousel-img">
+              </div>
+              <div class="carousel-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+                <span class="dot" data-index="4"></span>
+              </div>
+            </div>
           </div>
+
+          <script>
+            (function () {
+              const slides = document.querySelectorAll('.carousel-img');
+              const dots = document.querySelectorAll('.dot');
+              let currentIndex = 0;
+              let interval;
+
+              function showSlide(index) {
+                slides.forEach((slide, i) => {
+                  slide.classList.toggle('active', i === index);
+                });
+                dots.forEach((dot, i) => {
+                  dot.classList.toggle('active', i === index);
+                });
+                currentIndex = index;
+              }
+
+              function nextSlide() {
+                showSlide((currentIndex + 1) % slides.length);
+              }
+
+              function startAutoPlay() {
+                interval = setInterval(nextSlide, 4000);
+              }
+
+              function stopAutoPlay() {
+                clearInterval(interval);
+              }
+
+              dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                  stopAutoPlay();
+                  showSlide(parseInt(dot.dataset.index));
+                  startAutoPlay();
+                });
+              });
+
+              startAutoPlay();
+            })();
+          </script>
 
           <div class="glass-intro">
             <p>
