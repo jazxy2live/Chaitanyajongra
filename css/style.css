@@ -624,7 +624,8 @@ hr {
 }
 
 .hero-flex .tesla-img {
-  width: calc(50% - 90px);
+  /* Use explicit left/right instead of calc() for Safari compatibility */
+  width: auto;
   height: 100vh;
   object-fit: cover;
   object-position: center center;
@@ -635,6 +636,10 @@ hr {
   position: fixed;
   top: 0;
   left: 180px;
+  right: 50%;
+  /* Safari-specific fix */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .hero-text {
