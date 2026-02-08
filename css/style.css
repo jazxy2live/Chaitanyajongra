@@ -551,6 +551,10 @@ hr {
   height: 300px;
   border-radius: 4px;
   overflow: hidden;
+  /* Safari fix: force new stacking context to respect overflow:hidden */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  isolation: isolate;
 }
 
 .carousel-slides {
