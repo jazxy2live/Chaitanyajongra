@@ -1,7 +1,7 @@
 /* Minimal CSS  */
 
 /* Import retro fonts */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Berkeley+Mono:wght@400&display=swap');
+/* Fonts loaded via <link> in HTML for non-blocking render */
 
 /* Mobile optimizations */
 * {
