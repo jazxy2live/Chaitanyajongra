@@ -509,6 +509,11 @@ hr {
   font-weight: 500;
 }
 
+.favorite a,
+.favorite a:visited {
+  color: #03A9F4;
+}
+
 /* Tesla image base styling */
 .tesla-img {
   width: 100%;
