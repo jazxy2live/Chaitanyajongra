@@ -514,6 +514,17 @@ hr {
   color: #03A9F4;
 }
 
+/* Light red highlight styling */
+.highlight-red {
+  color: #E57373;
+  font-weight: 500;
+}
+
+.highlight-red a,
+.highlight-red a:visited {
+  color: #E57373;
+}
+
 /* Tesla image base styling */
 .tesla-img {
   width: 100%;
