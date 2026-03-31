@@ -525,6 +525,17 @@ hr {
   color: #E57373;
 }
 
+/* Strong red highlight for core influences */
+.highlight-red-strong {
+  color: #C62828;
+  font-weight: 600;
+}
+
+.highlight-red-strong a,
+.highlight-red-strong a:visited {
+  color: #C62828;
+}
+
 /* Tesla image base styling */
 .tesla-img {
   width: 100%;
