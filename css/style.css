@@ -1,1240 +1,590 @@
-/* Minimal CSS  */
-
-/* Import retro fonts */
-/* Fonts loaded via <link> in HTML for non-blocking render */
-
-/* Mobile optimizations */
-* {
+/* ─── Reset ─── */
+*, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
   -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
-
-/* Improve touch interactions */
-a,
-button {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: #ffffff;
-  background-image: none;
-  color: #000;
-  font-family: 'IBM Plex Mono', 'Courier New', Verdana, Geneva, sans-serif;
-  font-size: 13px;
-  line-height: 1.4;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-/* Add overlay to make text readable */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.92);
-  z-index: -1;
 }
 
-/* Sidebar Navigation */
-.sidebar {
+/* ─── Body ─── */
+body {
+  min-height: 100%;
+  background: #fff;
+  color: #111;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ─── Top-Left Name ─── */
+.site-name {
   position: fixed;
-  left: 0;
-  top: 0;
-  width: 180px;
-  height: 100vh;
-  background-color: #f0f7ff;
-  padding: 40px 30px;
-  border-right: 1px solid #ddd;
+  top: 38px;
+  left: 40px;
+  font-size: 0;
+  font-weight: 400;
+  color: #2a5db0;
+  text-decoration: none;
   z-index: 10;
 }
 
-.sidebar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.site-name::before {
+  content: "CJ";
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 19px;
+  font-style: italic;
+  line-height: 1;
 }
 
-.sidebar li {
-  margin: 0 0 20px 0;
+.site-name:visited {
+  color: #2a5db0;
 }
 
-.sidebar a {
-  color: #1877F2;
+.site-name:hover {
+  color: #111;
   text-decoration: none;
-  font-size: 14px;
-  padding: 8px 0;
+}
+
+.site-name:active {
+  color: #2a5db0;
+}
+
+.site-header {
   display: block;
 }
 
-.sidebar a:hover {
-  text-decoration: underline;
+.site-mark {
+  position: fixed;
+  top: 38px;
+  left: 40px;
+  font-size: 0;
+  font-weight: 400;
+  color: #2a5db0;
+  text-decoration: none;
+  z-index: 10;
 }
 
-/* Main content */
-.main-content {
-  margin-left: 220px;
-  max-width: 700px;
-  padding: 50px 40px;
+.site-mark::before {
+  content: "CJ";
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 19px;
+  font-style: italic;
+  line-height: 1;
 }
 
-h1 {
-  font-size: 24px;
-  font-weight: normal;
-  margin: 0 0 20px 0;
-  color: #1877F2;
-  letter-spacing: -0.5px;
-  opacity: 0.7;
+.site-mark:visited {
+  color: #2a5db0;
 }
 
-h1 a {
+.site-mark:hover {
+  color: #111;
   text-decoration: none;
 }
 
+.site-header .site-nav a[href$="index.html"] {
+  display: none;
+}
+
+/* ─── Top-Right Nav ─── */
+.site-nav {
+  position: fixed;
+  top: 38px;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 14px;
+  line-height: 1.25;
+  text-align: right;
+  z-index: 10;
+}
+
+.site-nav a {
+  color: #888;
+  text-decoration: none;
+}
+
+.site-nav a:visited {
+  color: #888;
+}
+
+.site-nav a:hover {
+  color: #111;
+}
+
+.site-nav a.active {
+  color: #2a5db0;
+}
+
+/* ─── Centered Content ─── */
+.site-content {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 80px 24px 100px;
+}
+
+/* ─── Links ─── */
+a {
+  color: #111;
+}
+
+a:visited {
+  color: #555;
+}
+
+/* ─── Typography ─── */
+h1 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
 h2 {
-  font-size: 22px;
-  font-weight: bold;
-  margin: 40px 0 20px 0;
-  color: #1877F2;
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 28px;
+  margin-bottom: 10px;
   line-height: 1.3;
 }
 
 h3 {
   font-size: 15px;
-  font-weight: bold;
-  margin: 25px 0 10px 0;
-  color: #1877F2;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  line-height: 1.3;
 }
 
 p {
-  margin: 20px 0;
-  text-align: left;
-  line-height: 1.8;
-  color: #000;
-  font-size: 15px;
+  margin: 0 0 14px;
 }
 
-a {
-  color: #000;
-  text-decoration: underline;
-}
-
-a:visited {
-  color: #0D47A1;
-}
-
-a:hover {
-  color: #333;
-}
-
-ul {
-  margin: 10px 0;
-  padding-left: 20px;
+ul, ol {
+  margin: 0 0 16px;
+  padding-left: 18px;
 }
 
 li {
-  margin: 5px 0;
-}
-
-blockquote {
-  margin: 20px 0;
-  padding: 0 0 0 20px;
-  border-left: 2px solid #ccc;
-  font-style: italic;
-  color: #333;
+  margin: 0 0 4px;
+  font-size: 15px;
 }
 
 hr {
-  border: none;
-  border-top: 1px solid #ddd;
-  margin: 40px 0;
+  margin: 24px 0;
+  border: 0;
+  border-top: 1px solid #ccc;
 }
 
-/* Profile image */
-.profile-img {
-  width: 480px;
-  height: 230px;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 4px;
-  margin: 20px 0 30px 0;
-  display: block;
-}
-
-.section {
-  margin-bottom: 40px;
-}
-
-.date {
-  color: #666;
-  font-size: 12px;
-  margin: 5px 0 20px 0;
+blockquote {
+  margin: 16px 0;
+  padding-left: 16px;
+  border-left: 2px solid #ccc;
+  color: #444;
   font-style: italic;
 }
 
-.notebook-item {
-  margin: 0 0 15px 0;
+/* ─── Section Separator ─── */
+.section-break {
+  margin: 32px 0;
+  border: 0;
+  border-top: 1px solid #e5e5e5;
 }
 
-.notebook-date {
-  color: #666;
-  font-size: 11px;
-  font-weight: bold;
-}
-
-.footer {
-  position: relative;
-  margin-top: 80px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  padding: 30px 0 20px 0;
-  width: 100%;
-  border-top: 1px solid #eee;
-  clear: both;
-}
-
-.footer-content {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-
-.footer-quote {
-  font-family: 'IBM Plex Mono', monospace;
-  font-style: italic;
-  color: #666;
-  margin-bottom: 20px;
-  text-align: center;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 1.4;
-}
-
-.footer-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-  font-size: 12px;
-  color: #666;
-  font-family: 'IBM Plex Mono', monospace;
-  font-weight: 400;
-  padding-top: 20px;
-  border-top: 1px solid #eee;
-}
-
-/* Remove old nav styles since we're using sidebar */
-.nav {
-  display: none;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .sidebar {
-    position: static;
-    width: 100%;
-    height: auto;
-    padding: 20px 20px;
-    background-color: #f0f7ff;
-    border-right: none;
-    border-bottom: 1px solid #ddd;
-  }
-
-  .sidebar ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .sidebar li {
-    margin: 0;
-  }
-
-  .sidebar a {
-    font-size: 14px;
-    padding: 12px 16px;
-    display: block;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    min-height: 44px;
-    min-width: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    transition: all 0.2s ease;
-  }
-
-  .sidebar a:hover {
-    background-color: #f0f0f0;
-    text-decoration: none;
-    transform: translateY(-1px);
-  }
-
-  .main-content {
-    margin-left: 0;
-    padding: 30px 20px;
-    max-width: 100%;
-  }
-
-  .profile-img {
-    width: 400px;
-    height: 190px;
-    margin: 20px auto 30px auto;
-    display: block;
-  }
-
-  .footer {
-    margin-left: 0;
-    width: 100%;
-  }
-
-  .footer-content {
-    padding: 0 20px;
-  }
-
-  .footer-meta {
-    flex-direction: column;
-    gap: 8px;
-    text-align: center;
-  }
-
-  h1 {
-    font-size: 22px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  h2 {
-    font-size: 18px;
-    margin: 30px 0 20px 0;
-  }
-
-  h3 {
-    font-size: 16px;
-    margin: 25px 0 15px 0;
-  }
-
-  p {
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-
-  ul,
-  li {
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  .section {
-    margin: 35px 0;
-  }
-
-  .footer {
-    margin-top: 50px;
-  }
-
-  /* Better link touch targets */
-  a {
-    padding: 2px 0;
-  }
-
-  .right-align {
-    margin-right: 20px;
-    margin-left: 20px;
-  }
-
-  /* Allow scrolling on stacked hero layout */
-  .hero-page {
-    overflow: visible;
-  }
-
-  /* Show name tag under profile image since hover isn't available */
-  .profile-hover-text {
-    position: static;
-    transform: none;
-    opacity: 1;
-    color: #000;
-    margin-top: 6px;
-  }
-
-  /* Mobile override removed - no hover effects */
-
-  /* Tesla image height tweak for very small screens */
-  .hero-flex .tesla-img {
-    height: 50vh;
-  }
-
-  /* Mobile profile adjustments */
-  .profile-wrapper {
-    justify-content: center;
-  }
-
-  .profile-img {
-    margin: 0 auto;
-  }
-
-  /* Center heading on mobile */
-  .hero-text h1 {
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-content {
-    padding: 20px 16px;
-  }
-
-  .sidebar {
-    padding: 16px;
-  }
-
-  .sidebar ul {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
-  }
-
-  .sidebar a {
-    padding: 14px 20px;
-    font-size: 15px;
-    min-height: 48px;
-  }
-
-  .sidebar li {
-    margin: 0;
-  }
-
-  .profile-img {
-    width: 340px;
-    height: 165px;
-    margin: 20px auto 25px auto;
-    display: block;
-  }
-
-  h1 {
-    font-size: 20px;
-    text-align: center;
-    margin-bottom: 16px;
-  }
-
-  h2 {
-    font-size: 17px;
-    margin: 25px 0 16px 0;
-  }
-
-  h3 {
-    font-size: 15px;
-    margin: 20px 0 12px 0;
-  }
-
-  p {
-    font-size: 13px;
-    line-height: 1.7;
-    margin-bottom: 18px;
-  }
-
-  ul,
-  li {
-    font-size: 13px;
-    line-height: 1.7;
-  }
-
-  .section {
-    margin: 30px 0;
-  }
-
-  body {
-    font-size: 13px;
-  }
-
-  .footer-content {
-    padding: 0 16px;
-  }
-
-  .footer-quote {
-    font-size: 12px;
-  }
-
-  .footer-meta {
-    font-size: 11px;
-  }
-
-  /* Improve background on small screens */
-  body {
-    background-attachment: scroll;
-  }
-
-  /* Tesla image height tweak for very small screens */
-  .hero-flex .tesla-img {
-    height: 40vh;
-  }
-
-  .hero-text {
-    padding: 25px 16px;
-  }
-
-  .hero-text h1 {
-    font-size: 20px;
-    text-align: center;
-  }
-}
-
-/* Specific spacing for book list */
-.books-list li,
-.movies-list li {
-  margin: 20px 0;
-  line-height: 1.6;
-}
-
-/* Favorite films styling */
-.favorite {
-  color: #03A9F4;
-  font-weight: 500;
-}
-
-.favorite a,
-.favorite a:visited {
-  color: #03A9F4;
-}
-
-/* Light red highlight styling */
-.highlight-red {
-  color: #E57373;
-  font-weight: 500;
-}
-
-.highlight-red a,
-.highlight-red a:visited {
-  color: #E57373;
-}
-
-/* Strong red highlight for core influences */
-.highlight-red-strong {
-  color: #C62828;
-  font-weight: 600;
-}
-
-.highlight-red-strong a,
-.highlight-red-strong a:visited {
-  color: #C62828;
-}
-
-/* Tesla image base styling */
-.tesla-img {
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 0;
-  margin: 0;
-  display: block;
-}
-
-/* Simple profile image wrapper - no hover effects */
-.profile-wrapper {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.profile-img {
-  width: 480px;
-  height: 230px;
-  border-radius: 4px;
-  object-fit: cover;
-  object-position: center;
-  margin: 0;
-  display: block;
-}
-
-/* Profile Carousel Styles */
-.profile-carousel {
-  position: relative;
-  width: 400px;
-  height: 300px;
-  border-radius: 4px;
-  overflow: hidden;
-  /* Safari fix: force new stacking context to respect overflow:hidden */
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  isolation: isolate;
-}
-
-.carousel-slides {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.carousel-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  opacity: 0;
-  transition: opacity 0.8s ease-in-out;
-}
-
-.carousel-img.active {
-  opacity: 1;
-}
-
-.carousel-dots {
-  position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-  z-index: 5;
-}
-
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.dot:hover {
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-.dot.active {
-  background-color: #fff;
-  transform: scale(1.2);
-}
-
-.profile-hover-text {
-  font-family: 'IBM Plex Mono', monospace;
-  color: #888;
-  font-size: 11px;
-  text-align: center;
-  letter-spacing: 2px;
-  margin-top: 8px;
-  text-transform: uppercase;
-}
-
-/* Two-column hero layout with fixed image */
-.hero-flex {
-  display: flex;
-  min-height: 100vh;
-  position: relative;
-  align-items: flex-start;
-  gap: 0;
-}
-
-.hero-flex .tesla-img {
-  width: -webkit-calc(50% - 90px);
-  width: calc(50% - 90px);
-  height: 100vh;
-  object-fit: cover;
-  object-position: center center;
-  border-radius: 0;
-  margin: 0;
-  display: block;
-  flex-shrink: 0;
-  position: fixed;
-  top: 0;
-  left: 180px;
-  /* Safari-specific fix for rendering */
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-}
-
-.hero-text {
-  flex: 1;
-  width: 50%;
-  margin-left: 50%;
-  padding: 60px 60px 80px 60px;
-  background-color: #ffffff;
-  min-height: 100vh;
-  position: relative;
-  z-index: 2;
-  overflow-y: visible;
-  -webkit-overflow-scrolling: touch;
-}
-
-@media (max-width: 768px) {
-  .hero-flex {
-    display: block;
-    min-height: auto;
-  }
-
-  .hero-flex .tesla-img {
-    position: static;
-    width: 100%;
-    height: 50vh;
-    min-height: 300px;
-    margin: 0;
-    left: auto;
-    object-position: center center;
-    flex-shrink: 1;
-  }
-
-  .hero-text {
-    width: 100%;
-    margin-left: 0;
-    padding: 30px 20px 50px 20px;
-    background-color: #ffffff;
-    min-height: auto;
-  }
-
-  .hero-text h1 {
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-}
-
-/* Hero page overrides */
-.hero-page {
-  max-width: none;
+/* ─── Essay Index ─── */
+.essay-list {
+  list-style: none;
   padding: 0;
-  overflow: hidden;
+  margin: 0;
 }
 
-@media (max-width: 768px) {
-  .hero-page {
-    overflow: visible;
-  }
-}
-
-/* Glass concept styling */
-.glass-intro {
-  margin: 30px 0 50px 0;
-  padding: 25px 0;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-}
-
-.glass-intro p {
-  font-size: 13px;
+.essay-list li {
+  margin-bottom: 18px;
+  font-size: 15px;
   line-height: 1.5;
-  color: #333;
-  font-style: italic;
-  margin: 0;
-  letter-spacing: 0.1px;
 }
 
-.not-statements {
-  margin-top: 40px;
+.essay-list a {
+  text-decoration: underline;
 }
 
-.not-statements h2 {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 0 0 40px 0;
-  color: #000;
-  letter-spacing: -0.3px;
-  text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 2px;
-}
-
-.not-item {
-  margin: 40px 0;
-  padding: 30px 0;
-  border-bottom: 1px solid #f0f0f0;
-  position: relative;
-}
-
-.not-item:last-child {
-  border-bottom: none;
-}
-
-.not-item h3 {
-  font-size: 14px;
-  font-weight: bold;
-  color: #666;
-  margin: 0 0 15px 0;
-  font-family: 'IBM Plex Mono', monospace;
-  letter-spacing: 1px;
-}
-
-.not-item p {
+.essay-list .date {
+  color: #888;
   font-size: 13px;
-  line-height: 1.6;
-  color: #000;
-  margin: 0;
-  font-weight: 400;
-  letter-spacing: 0.1px;
 }
 
-/* Mobile responsive adjustments */
-@media (max-width: 768px) {
-  .profile-wrapper {
-    justify-content: center;
-    margin-bottom: 25px;
-  }
-
-  .profile-img {
-    width: 400px;
-    height: 190px;
-    margin: 0 auto;
-  }
-
-  .profile-carousel {
-    width: 340px;
-    height: 255px;
-    margin: 0 auto;
-  }
-
-  .glass-intro {
-    margin: 25px 0 35px 0;
-    padding: 20px 0;
-  }
-
-  .glass-intro p {
-    font-size: 15px;
-    line-height: 1.7;
-    text-align: center;
-  }
-
-  .not-statements h2 {
-    font-size: 13px;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-
-  .not-item {
-    margin: 30px 0;
-    padding: 25px 0;
-  }
-
-  .not-item h3 {
-    font-size: 13px;
-    margin-bottom: 12px;
-  }
-
-  .not-item p {
-    font-size: 14px;
-    line-height: 1.7;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-flex .tesla-img {
-    height: 40vh;
-    min-height: 250px;
-  }
-
-  .hero-text {
-    padding: 25px 16px 40px 16px;
-  }
-
-  .hero-text h1 {
-    font-size: 22px;
-  }
-
-  .profile-img {
-    width: 340px;
-    height: 165px;
-  }
-
-  .profile-carousel {
-    width: 300px;
-    height: 225px;
-  }
-
-  .dot {
-    width: 6px;
-    height: 6px;
-  }
-
-  .glass-intro {
-    margin: 20px 0 30px 0;
-    padding: 18px 0;
-  }
-
-  .glass-intro p {
-    font-size: 14px;
-    line-height: 1.6;
-    text-align: center;
-  }
-
-  .not-statements h2 {
-    font-size: 12px;
-    margin-bottom: 25px;
-    text-align: center;
-  }
-
-  .not-item {
-    margin: 25px 0;
-    padding: 20px 0;
-  }
-
-  .not-item h3 {
-    font-size: 12px;
-    margin-bottom: 10px;
-  }
-
-  .not-item p {
-    font-size: 13px;
-    line-height: 1.7;
-  }
-}
-
-
-/* Project/Idea Cards */
-.project-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-  margin-top: 30px;
-}
-
-.project-card {
-  padding: 28px 0;
-  border: none;
-  background-color: transparent;
-  border-bottom: 1px solid #eee;
-  position: relative;
-}
-
-.project-card:last-child {
-  border-bottom: none;
-}
-
-.project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 8px;
-}
-
-.project-title {
-  font-size: 15px;
-  font-weight: 500;
-  color: #000;
-  margin: 0;
-  font-family: 'IBM Plex Mono', monospace;
-}
-
-.project-status {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: #aaa;
-  border: none;
-  padding: 0;
-}
-
-.project-desc {
-  font-size: 13px;
-  line-height: 1.7;
-  color: #555;
-  margin: 0;
-}
-
-.project-date {
-  font-size: 11px;
-  color: #aaa;
-  font-family: 'IBM Plex Mono', monospace;
-  margin-bottom: 10px;
+.essay-list .desc {
   display: block;
-}
-
-.project-tags {
-  margin-top: 14px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.project-tag {
-  font-size: 10px;
-  color: #999;
-  background-color: transparent;
-  padding: 0;
-  font-family: 'IBM Plex Mono', monospace;
-  letter-spacing: 0.5px;
-}
-
-.project-tag::after {
-  content: '·';
-  margin-left: 6px;
-  color: #ccc;
-}
-
-.project-tag:last-child::after {
-  content: '';
-  margin-left: 0;
-}
-
-/* Mobile responsive adjustments for Projects */
-@media (max-width: 768px) {
-  .project-grid {
-    gap: 30px;
-    margin-top: 30px;
-  }
-
-  .project-card {
-    padding: 25px;
-  }
-
-  .project-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
-  .project-status {
-    align-self: flex-start;
-  }
-}
-
-@media (max-width: 480px) {
-  .project-grid {
-    gap: 25px;
-  }
-
-  .project-card {
-    padding: 20px;
-  }
-
-  .project-title {
-    font-size: 16px;
-  }
-
-  .project-desc {
-    font-size: 13px;
-  }
-}
-
-
-/* =============================================
-   FILMS PAGE STYLES
-   ============================================= */
-
-/* Films intro section */
-.films-intro {
-  margin-bottom: 50px;
-}
-
-.films-tagline {
-  font-size: 15px;
   color: #555;
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+/* ─── Project Timeline ─── */
+.project-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  margin-top: 32px;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 32px;
+  align-items: baseline;
+}
+
+.timeline-meta {
+  flex: 0 0 120px;
+}
+
+.timeline-meta h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.timeline-meta .date {
+  font-size: 13px;
+  color: #888;
+  display: block;
+  margin-top: 4px;
+}
+
+.timeline-content p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.timeline-content .note {
+  color: #666;
+  font-size: 14px;
   font-style: italic;
-  line-height: 1.7;
-  margin-top: 15px;
-  padding-left: 20px;
-  border-left: 2px solid #ddd;
+  margin-top: 8px;
 }
 
-/* Films grid */
-.films-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 60px;
-  margin: 50px 0;
+/* ─── Film List ─── */
+.film-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* Film card */
-.film-card {
-  position: relative;
-  background: linear-gradient(135deg, #fafafa 0%, #fff 100%);
-  border: 1px solid #e8e8e8;
-  padding: 35px 30px 30px 30px;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+.film-list li {
+  margin-bottom: 28px;
 }
 
-.film-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-  border-color: #d0d0d0;
+.film-list .film-title {
+  font-weight: bold;
+  font-size: 15px;
 }
 
-/* Film number */
-.film-number {
-  position: absolute;
-  top: -15px;
-  left: 30px;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 12px;
-  font-weight: 500;
-  color: #999;
-  background: #fff;
-  padding: 5px 12px;
-  letter-spacing: 2px;
-  border: 1px solid #eee;
+.film-list .film-meta {
+  color: #888;
+  font-size: 13px;
 }
 
-/* Video container - 16:9 aspect ratio */
 .film-video-wrapper {
-  margin: 25px 0 20px 0;
+  margin: 8px 0 4px;
 }
 
 .film-video-container {
   position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-  /* 16:9 Aspect Ratio */
-  height: 0;
   overflow: hidden;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   background: #000;
-  border-radius: 2px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
 .film-video-container iframe {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  border: none;
+  border: 0;
 }
 
-/* Film info */
-.film-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid #f0f0f0;
+/* ─── Reading Lists ─── */
+.reading-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
 }
 
-.film-title {
-  font-family: 'IBM Plex Mono', monospace;
+.reading-list li {
+  margin-bottom: 5px;
+  font-size: 15px;
+  line-height: 1.7;
+  padding: 2px 0;
+}
+
+.favorite {
+  color: inherit;
+}
+
+.highlight-red {
+  color: #c0392b;
+}
+
+.highlight-blue {
+  color: #2a5db0;
+}
+
+.highlight-red-strong {
+  color: #c0392b;
+  font-weight: bold;
+}
+
+.reading-list .highlight-red a,
+.reading-list .highlight-blue a {
+  color: inherit;
+}
+
+/* ─── Back Link ─── */
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 0;
+  line-height: 1;
+  color: #111;
+  text-decoration: none;
+}
+
+.back-link::before {
+  content: "←";
   font-size: 18px;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin: 0;
-  letter-spacing: -0.3px;
 }
 
-.film-meta {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 11px;
+.back-link:hover {
+  color: #555;
+}
+
+/* ─── Essay Article ─── */
+.essay-date {
   color: #888;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
+  font-size: 13px;
+  margin-bottom: 20px;
+  display: block;
 }
 
-/* Films note section */
-.films-note {
-  margin-top: 60px;
-  padding: 30px;
-  background: linear-gradient(135deg, #f8f8f8 0%, #fafafa 100%);
-  border-left: 3px solid #333;
+/* ─── Contact ─── */
+.contact-info p {
+  font-size: 15px;
 }
 
-.films-note p {
-  font-size: 14px;
-  line-height: 1.8;
-  color: #444;
-  margin: 0;
+/* ─── Home Photos ─── */
+.home-photos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 0 auto;
 }
 
-.films-note em {
-  color: #222;
-  font-weight: 500;
+.home-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: none;
+  padding: 80px 140px;
+  text-align: center;
 }
 
-/* Mobile responsive for Films */
-@media (max-width: 768px) {
-  .films-grid {
-    gap: 50px;
-    margin: 40px 0;
-  }
-
-  .film-card {
-    padding: 30px 25px 25px 25px;
-  }
-
-  .film-number {
-    left: 25px;
-    font-size: 11px;
-  }
-
-  .film-title {
-    font-size: 16px;
-  }
-
-  .films-tagline {
-    font-size: 14px;
-    padding-left: 15px;
-  }
-
-  .films-note {
-    padding: 25px;
-    margin-top: 50px;
-  }
-
-  .films-note p {
-    font-size: 13px;
-  }
+.home-photo {
+  display: block;
+  width: min(42vw, 420px);
+  aspect-ratio: 7 / 5;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0;
 }
 
-@media (max-width: 480px) {
-  .films-grid {
-    gap: 40px;
-    margin: 35px 0;
+/* ─── Writings Page: Shell ─── */
+.page-shell {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 80px 24px 100px;
+}
+
+.page-title {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+/* ─── Essay Index ─── */
+.essay-index {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.essay-row {
+  display: block;
+  padding: 0;
+  border: 0;
+  text-decoration: none;
+  color: #111;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.essay-row:visited {
+  color: #111;
+}
+
+.essay-row:hover {
+  background: transparent;
+  text-decoration: underline;
+}
+
+/* ─── Single Essay Page ─── */
+.essay-shell {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 80px 24px 100px;
+}
+
+.essay-article h1 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.essay-body {
+  margin-top: 16px;
+}
+
+.essay-body p {
+  margin: 0 0 14px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 600px) {
+  body {
+    overflow-x: hidden;
   }
 
-  .film-card {
-    padding: 25px 18px 20px 18px;
+  .site-name {
+    position: static;
+    display: inline-block;
+    padding: 18px 20px 0;
   }
 
-  .film-number {
-    left: 18px;
-    top: -12px;
-    font-size: 10px;
-    padding: 4px 10px;
+  .site-mark {
+    position: static;
+    display: inline-block;
+    padding: 18px 20px 0;
   }
 
-  .film-info {
+  .site-nav {
+    position: static;
+    padding: 10px 20px 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 4px 12px;
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  .site-nav a {
+    display: inline-block;
+    line-height: 1.45;
+    white-space: nowrap;
+  }
+
+  .page-shell,
+  .essay-shell,
+  .site-content {
+    width: 100%;
+    max-width: none;
+    padding: 48px 20px 64px;
+  }
+
+  .page-title,
+  h1 {
+    margin-bottom: 14px;
+  }
+
+  .timeline-item {
     flex-direction: column;
     gap: 8px;
-    align-items: flex-start;
+  }
+  
+  .timeline-meta {
+    flex: auto;
   }
 
-  .film-title {
+  .project-timeline {
+    gap: 34px;
+    margin-top: 24px;
+  }
+
+  .timeline-content p {
     font-size: 15px;
+    line-height: 1.65;
   }
 
-  .film-meta {
-    font-size: 10px;
+  .home-content {
+    min-height: 100svh;
+    padding: 42px 20px 48px;
   }
 
-  .films-tagline {
+  .home-photos {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .home-photo {
+    width: min(100%, 420px);
+  }
+
+  .essay-body p {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .reading-list li {
+    line-height: 1.65;
+  }
+
+  .section-break {
+    margin: 28px 0;
+  }
+
+  .film-list li {
+    margin-bottom: 22px;
+  }
+
+  .film-video-container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-nav {
+    gap: 3px 10px;
     font-size: 13px;
-    padding-left: 12px;
   }
 
-  .films-note {
-    padding: 20px;
-    margin-top: 40px;
+  .page-shell,
+  .essay-shell,
+  .site-content {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
-  .films-note p {
-    font-size: 12px;
-    line-height: 1.7;
+  .home-content {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
