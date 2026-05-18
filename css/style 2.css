@@ -1,0 +1,691 @@
+/* Minimal CSS  */
+
+/* Import retro fonts */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Berkeley+Mono:wght@400&display=swap');
+
+/* Mobile optimizations */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* Improve touch interactions */
+a, button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fffffa;
+  background-image: none;
+  color: #000;
+  font-family: 'IBM Plex Mono', 'Courier New', Verdana, Geneva, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Add overlay to make text readable */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 250, 0.92);
+  z-index: -1;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 180px;
+  height: 100vh;
+  background-color: #f5f5f5;
+  padding: 40px 30px;
+  border-right: 1px solid #ddd;
+  z-index: 10;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 0 0 20px 0;
+}
+
+.sidebar a {
+  color: #00006a;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 0;
+  display: block;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* Main content */
+.main-content {
+  margin-left: 220px;
+  max-width: 600px;
+  padding: 40px 30px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: normal;
+  margin: 0 0 20px 0;
+  color: #000;
+  letter-spacing: -0.5px;
+}
+
+h1 a {
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 30px 0 15px 0;
+  color: #000;
+}
+
+h3 {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 25px 0 10px 0;
+  color: #000;
+}
+
+p {
+  margin: 15px 0;
+  text-align: left;
+  line-height: 1.6;
+  color: #222;
+}
+
+a {
+  color: #000;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #551a8b;
+}
+
+a:hover {
+  color: #333;
+}
+
+ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+li {
+  margin: 5px 0;
+}
+
+blockquote {
+  margin: 20px 0;
+  padding: 0 0 0 20px;
+  border-left: 2px solid #ccc;
+  font-style: italic;
+  color: #333;
+}
+
+/* Profile image */
+.profile-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 4px;
+  margin: 20px 0 30px 0;
+  display: block;
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.date {
+  color: #666;
+  font-size: 12px;
+  margin: 5px 0 20px 0;
+  font-style: italic;
+}
+
+.notebook-item {
+  margin: 0 0 15px 0;
+}
+
+.notebook-date {
+  color: #666;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.footer {
+  position: relative;
+  margin-top: 80px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  padding: 30px 0 20px 0;
+  width: 100%;
+  border-top: 1px solid #eee;
+  clear: both;
+}
+
+.footer-content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.footer-quote {
+  font-family: 'IBM Plex Mono', monospace;
+  font-style: italic;
+  color: #666;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.footer-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #666;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 400;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+/* Remove old nav styles since we're using sidebar */
+.nav {
+  display: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 20px 20px;
+    background-color: #f5f5f5;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .sidebar li {
+    margin: 0;
+  }
+  
+  .sidebar a {
+    font-size: 14px;
+    padding: 12px 16px;
+    display: block;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.2s ease;
+  }
+  
+  .sidebar a:hover {
+    background-color: #f0f0f0;
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+  
+  .main-content {
+    margin-left: 0;
+    padding: 30px 20px;
+  }
+  
+  .profile-img {
+    width: 220px;
+    height: 220px;
+    max-width: 220px;
+    max-height: 220px;
+    margin: 20px auto 30px auto;
+    display: block;
+  }
+  
+  .footer {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .footer-content {
+    padding: 0 20px;
+  }
+  
+  .footer-meta {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 18px;
+    margin: 30px 0 20px 0;
+  }
+  
+  h3 {
+    font-size: 16px;
+    margin: 25px 0 15px 0;
+  }
+  
+  p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  ul, li {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .section {
+    margin: 35px 0;
+  }
+  
+  .footer {
+    margin-top: 50px;
+  }
+  
+  /* Better link touch targets */
+  a {
+    padding: 2px 0;
+  }
+  
+  .right-align {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  
+  /* Allow scrolling on stacked hero layout */
+  .hero-page {
+    overflow: visible;
+  }
+  
+  /* Show name tag under profile image since hover isn't available */
+  .profile-hover-text {
+    position: static;
+    transform: none;
+    opacity: 1;
+    color: #000;
+    margin-top: 6px;
+  }
+  
+    /* Mobile override removed - no hover effects */
+  
+  /* Tesla image height tweak for very small screens */
+  .hero-flex .tesla-img {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 20px 16px;
+  }
+  
+  .sidebar {
+    padding: 16px;
+  }
+  
+  .sidebar ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  
+  .sidebar a {
+    padding: 14px 20px;
+    font-size: 15px;
+    min-height: 48px;
+  }
+  
+  .sidebar li {
+    margin: 0;
+  }
+  
+  .profile-img {
+    width: 180px;
+    height: 180px;
+    max-width: 180px;
+    max-height: 180px;
+    margin: 20px auto 25px auto;
+    display: block;
+  }
+  
+  h1 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  
+  h2 {
+    font-size: 17px;
+    margin: 25px 0 16px 0;
+  }
+  
+  h3 {
+    font-size: 15px;
+    margin: 20px 0 12px 0;
+  }
+  
+  p {
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+  }
+  
+  ul, li {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  
+  .section {
+    margin: 30px 0;
+  }
+  
+  body {
+    font-size: 13px;
+  }
+  
+  .footer-content {
+    padding: 0 16px;
+  }
+  
+  .footer-quote {
+    font-size: 12px;
+  }
+  
+  .footer-meta {
+    font-size: 11px;
+  }
+  
+  /* Improve background on small screens */
+  body {
+    background-attachment: scroll;
+  }
+  
+  /* Tesla image height tweak for very small screens */
+  .hero-flex .tesla-img {
+    height: 45vh;
+  }
+}
+
+/* Specific spacing for book list */
+.books-list li,
+.movies-list li {
+  margin: 20px 0;
+  line-height: 1.6;
+}
+  
+/* Tesla image large cinematic */
+.tesla-img {
+  width: 100%;
+  height: 100vh;
+  max-width: none;
+  display: block;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  object-fit: cover;
+}
+
+/* Simple profile image wrapper - no hover effects */
+.profile-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-hover-text {
+  font-family: 'IBM Plex Mono', monospace;
+  color: #888;
+  font-size: 11px;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-top: 8px;
+  text-transform: uppercase;
+}
+
+/* Two-column hero layout with fixed image */
+.hero-flex {
+  display: -webkit-flex;
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+.hero-flex .tesla-img {
+  -webkit-flex: 0 0 50%;
+  flex: 0 0 50%;
+  width: 50%;
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+  -webkit-object-fit: cover;
+  -o-object-fit: cover;
+  object-output: center center;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.hero-text {
+  -webkit-flex: 1;
+  flex: 1;
+  margin-left: 50%;
+  padding: 40px 30px 60px 30px;
+  background-color: #fffffa;
+  min-height: 100vh;
+  position: relative;
+  z-index: 2;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+  .hero-flex {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+  .hero-flex .tesla-img {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    margin-left: 0;
+  }
+  .hero-text {
+    margin-left: 0;
+    padding: 20px;
+    background-color: #fffffa;
+  }
+}
+
+/* Hero page overrides */
+.hero-page {
+  max-width: none;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Glass concept styling */
+.glass-intro {
+  margin: 30px 0 50px 0;
+  padding: 25px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.glass-intro p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #333;
+  font-style: italic;
+  margin: 0;
+  letter-spacing: 0.1px;
+}
+
+.not-statements {
+  margin-top: 40px;
+}
+
+.not-statements h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 40px 0;
+  color: #000;
+  letter-spacing: -0.3px;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.not-item {
+  margin: 40px 0;
+  padding: 30px 0;
+  border-bottom: 1px solid #f0f0f0;
+  position: relative;
+}
+
+.not-item:last-child {
+  border-bottom: none;
+}
+
+.not-item h3 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+  margin: 0 0 15px 0;
+  font-family: 'IBM Plex Mono', monospace;
+  letter-spacing: 1px;
+}
+
+.not-item p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #222;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .glass-intro {
+    margin: 25px 0 35px 0;
+    padding: 20px 0;
+  }
+  
+  .glass-intro p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  
+  .not-statements h2 {
+    font-size: 13px;
+    margin-bottom: 30px;
+  }
+  
+  .not-item {
+    margin: 30px 0;
+    padding: 25px 0;
+  }
+  
+  .not-item h3 {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  
+  .not-item p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 480px) {
+  .glass-intro {
+    margin: 20px 0 30px 0;
+    padding: 18px 0;
+  }
+  
+  .glass-intro p {
+    font-size: 14px;
+  }
+  
+  .not-statements h2 {
+    font-size: 12px;
+    margin-bottom: 25px;
+  }
+  
+  .not-item {
+    margin: 25px 0;
+    padding: 20px 0;
+  }
+  
+  .not-item h3 {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .not-item p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+}
+
