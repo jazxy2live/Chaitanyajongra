@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutor</title>
+  <meta name="description" content="An AI tutor that could teach you anything on a whiteboard">
+  <link rel="canonical" href="https://chaitanyajongra.com/aitutor.html">
+  <link rel="stylesheet" href="css/style.css?v=20260426-18">
+  <style>
+    .video-container {
+      margin: 40px 0;
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      background: #000;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .video-container iframe, .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+</head>
+
+<body style="background: linear-gradient(180deg, #F8FAFC 0%, #EEF2FF 100%); background-attachment: fixed; min-height: 100vh; margin: 0;">
+  <a class="site-name" href="index.html" style="display: none;">Chaitanya Jongra</a>
+  <nav class="site-nav" style="display: none;">
+    <a href="manifesto.html">Manifesto</a>
+    <a href="essays.html">Writings</a>
+    <a href="ideas.html">Projects</a>
+    <a href="films.html">Films</a>
+    <a href="reading.html">Reading</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main class="site-content">
+    <div class="video-container">
+      <video controls poster="images/proball/proball-01.jpg">
+        <source src="images/demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <h1 style="font-weight: 800; font-size: 2.4rem; text-align: center; line-height: 1.2; margin-bottom: 20px; color: #111827;">Meet the <span style="color: #2563EB;">AI tutor</span> that can teach you literally anything on a <span style="color: #7C3AED;">whiteboard</span>.</h1>
+    <p style="font-weight: 500; font-size: 1.2rem; text-align: center; color: #475569; margin-bottom: 40px; line-height: 1.6; max-width: 600px; margin-left: auto; margin-right: auto;">A private teacher that explains anything visually. Ask any question with zero embarrassment—your tutor never judges. Learning is finally interactive, personal, and ridiculously fun.</p>
+
+    <iframe data-tally-src="https://tally.so/embed/816A8O?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="616" frameborder="0" marginheight="0" marginwidth="0" title="Join early accessI’m building a private AI whiteboard teacher that explains anything visually — with writing, voice, diagrams, and step-by-step teaching."></iframe>
+    <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+  </main>
+</body>
+</html>
