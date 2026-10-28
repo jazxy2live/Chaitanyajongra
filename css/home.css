@@ -1,0 +1,113 @@
+/* Home page: one painting, centered, edges fading into the page. Loaded by index.html only. */
+.home-main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 100px 24px 60px;
+  box-sizing: border-box;
+}
+
+.home-painting {
+  position: relative;
+  margin: 0;
+  text-align: center;
+}
+
+.home-frame {
+  position: relative;
+  width: min(1000px, 86vw, calc((100vh - 240px) * 1.5));
+  aspect-ratio: 3 / 2;
+  border-radius: 24px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.home-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* blue around the edges, multiplied into the painting so it blends with the colors */
+.home-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(42, 93, 176, 0) 45%, rgba(42, 93, 176, 0.9) 100%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.home-painting figcaption {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #888;
+}
+
+@media (max-width: 600px) {
+  .home-main {
+    min-height: 0;
+    padding: 40px 20px 48px;
+  }
+
+  .home-frame {
+    width: 100%;
+  }
+}
+
+/* a tiny record player in the corner of the painting: the record spins and the needle drops while the music plays */
+.play-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 3;
+  display: block;
+  width: 84px;
+  height: 70px;
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.play-btn .turntable {
+  display: block;
+}
+
+.play-btn .record {
+  transform-origin: 48px 52px;
+  animation: record-spin 2.4s linear infinite;
+  animation-play-state: paused;
+}
+
+.play-btn .tonearm {
+  transform-origin: 104px 14px;
+  transform: rotate(-30deg);
+  transition: transform 0.6s ease;
+}
+
+.play-btn[aria-pressed="true"] .record {
+  animation-play-state: running;
+}
+
+.play-btn[aria-pressed="true"] .tonearm {
+  transform: rotate(0deg);
+}
+
+@keyframes record-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .play-btn .record {
+    animation: none;
+  }
+
+  .play-btn .tonearm {
+    transition: none;
+  }
+}

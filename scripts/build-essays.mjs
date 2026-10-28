@@ -6,14 +6,14 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CONTENT_DIR = path.join(ROOT, "content", "essays");
 const ESSAYS_DIR = path.join(ROOT, "essays");
 const SITE_URL = "https://chaitanyajongra.com";
-const ASSET_VERSION = "20260426-18";
+const ASSET_VERSION = "20261029-43";
 
 const navItems = [
   ["Writings", "essays.html", "essays"],
   ["Projects", "ideas.html", "projects"],
-  ["Films", "films.html", "films"],
   ["Reading", "reading.html", "reading"],
   ["Contact", "contact.html", "contact"],
+  ["Films", "films.html", "films"],
 ];
 
 function escapeHtml(value = "") {
@@ -205,8 +205,14 @@ function layout({ title, description, canonical, current, rootPrefix = "", bodyC
   <meta property="twitter:image" content="${SITE_URL}/images/chaitanya.jpg">
   <meta name="twitter:creator" content="@chaitanyajongra">
   <link rel="canonical" href="${escapeAttr(canonical)}">
+  <link rel="preload" href="/fonts/DMSans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="${rootPrefix}css/style.css?v=${ASSET_VERSION}">
   <link rel="alternate" type="application/rss+xml" title="Chaitanya Jongra - Writings" href="${rootPrefix}rss.xml">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <script src="${rootPrefix}js/site.js?v=${ASSET_VERSION}" defer></script>
 </head>
 
 <body${classAttr}>

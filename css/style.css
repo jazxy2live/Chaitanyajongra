@@ -11,12 +11,52 @@ html {
 }
 
 /* ─── Body ─── */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('../fonts/DMSans-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('../fonts/DMSans-italic-latin.woff2') format('woff2');
+}
+
+/* thin, quiet scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #c8c8c8 transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c8c8c8;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
 body {
   min-height: 100%;
   background: #fff;
   color: #111;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 18px;
   line-height: 1.6;
 }
 
@@ -27,30 +67,32 @@ body {
   left: 40px;
   font-size: 0;
   font-weight: 400;
-  color: #2a5db0;
+  color: #111;
   text-decoration: none;
   z-index: 10;
 }
 
 .site-name::before {
-  content: "CJ";
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 19px;
-  font-style: italic;
-  line-height: 1;
+  content: "Chaitanya Jongra";
+  font-size: 18px;
+  line-height: 1.25;
+  background: #cfe3ff;
+  padding: 2px 6px;
+  margin: 0 -6px;
+  border-radius: 4px;
 }
 
 .site-name:visited {
-  color: #2a5db0;
+  color: #111;
 }
 
 .site-name:hover {
-  color: #111;
+  color: #888;
   text-decoration: none;
 }
 
 .site-name:active {
-  color: #2a5db0;
+  color: #111;
 }
 
 .site-header {
@@ -69,11 +111,13 @@ body {
 }
 
 .site-mark::before {
-  content: "CJ";
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 19px;
-  font-style: italic;
-  line-height: 1;
+  content: "Chaitanya Jongra";
+  font-size: 18px;
+  line-height: 1.25;
+  background: #cfe3ff;
+  padding: 2px 6px;
+  margin: 0 -6px;
+  border-radius: 4px;
 }
 
 .site-mark:visited {
@@ -97,7 +141,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.25;
   text-align: right;
   z-index: 10;
@@ -122,7 +166,7 @@ body {
 
 /* ─── Centered Content ─── */
 .site-content {
-  max-width: 580px;
+  max-width: 640px;
   margin: 0 auto;
   padding: 80px 24px 100px;
 }
@@ -138,14 +182,14 @@ a:visited {
 
 /* ─── Typography ─── */
 h1 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
   margin-bottom: 20px;
   line-height: 1.3;
 }
 
 h2 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   margin-top: 28px;
   margin-bottom: 10px;
@@ -153,7 +197,7 @@ h2 {
 }
 
 h3 {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 400;
   margin-top: 20px;
   margin-bottom: 8px;
@@ -171,7 +215,7 @@ ul, ol {
 
 li {
   margin: 0 0 4px;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 hr {
@@ -204,7 +248,7 @@ blockquote {
 
 .essay-list li {
   margin-bottom: 18px;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.5;
 }
 
@@ -214,13 +258,13 @@ blockquote {
 
 .essay-list .date {
   color: #888;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .essay-list .desc {
   display: block;
   color: #555;
-  font-size: 14px;
+  font-size: 15px;
   margin-top: 2px;
 }
 
@@ -239,16 +283,16 @@ blockquote {
 }
 
 .timeline-meta {
-  flex: 0 0 120px;
+  flex: 0 0 144px;
 }
 
 .timeline-meta h3 {
   margin: 0;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .timeline-meta .date {
-  font-size: 13px;
+  font-size: 14px;
   color: #888;
   display: block;
   margin-top: 4px;
@@ -256,13 +300,13 @@ blockquote {
 
 .timeline-content p {
   margin: 0 0 8px;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.6;
 }
 
 .timeline-content .note {
   color: #666;
-  font-size: 14px;
+  font-size: 15px;
   font-style: italic;
   margin-top: 8px;
 }
@@ -271,7 +315,7 @@ blockquote {
 .film-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 56px 0 0;
 }
 
 .film-list li {
@@ -280,12 +324,12 @@ blockquote {
 
 .film-list .film-title {
   font-weight: bold;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .film-list .film-meta {
   color: #888;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .film-video-wrapper {
@@ -317,7 +361,7 @@ blockquote {
 
 .reading-list li {
   margin-bottom: 5px;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.7;
   padding: 2px 0;
 }
@@ -326,22 +370,30 @@ blockquote {
   color: inherit;
 }
 
-.highlight-red {
-  color: #c0392b;
+.hl {
+  padding: 1px 4px;
+  margin: 0 -4px;
+  border-radius: 3px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
-.highlight-blue {
-  color: #2a5db0;
+.hl-blue {
+  background: #cfe3ff;
 }
 
-.highlight-red-strong {
-  color: #c0392b;
-  font-weight: bold;
+.hl-red {
+  background: #ffd6d6;
 }
 
-.reading-list .highlight-red a,
-.reading-list .highlight-blue a {
+.reading-list .hl a {
   color: inherit;
+}
+
+.interests-line {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.7;
 }
 
 /* ─── Back Link ─── */
@@ -356,7 +408,7 @@ blockquote {
 
 .back-link::before {
   content: "←";
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .back-link:hover {
@@ -366,14 +418,14 @@ blockquote {
 /* ─── Essay Article ─── */
 .essay-date {
   color: #888;
-  font-size: 13px;
+  font-size: 14px;
   margin-bottom: 20px;
   display: block;
 }
 
 /* ─── Contact ─── */
 .contact-info p {
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .home-content {
@@ -670,7 +722,7 @@ blockquote {
 }
 
 .page-title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
   margin-bottom: 16px;
 }
@@ -688,7 +740,7 @@ blockquote {
   border: 0;
   text-decoration: none;
   color: #111;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 400;
   line-height: 1.6;
 }
@@ -710,7 +762,7 @@ blockquote {
 }
 
 .essay-article h1 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
   margin-bottom: 4px;
 }
@@ -721,7 +773,7 @@ blockquote {
 
 .essay-body p {
   margin: 0 0 14px;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.7;
 }
 
@@ -811,21 +863,21 @@ blockquote {
 
 .newspaper-img {
   width: 23%;
-  border: 2px solid #111;
-  padding: 8px;
-  background: #fdfdfc;
-  box-shadow: 4px 4px 0 rgba(17,17,17,0.1);
-  filter: contrast(1.05) saturate(1.1);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border: 1px solid rgba(17, 17, 17, 0.35);
+  border-radius: 4px;
   object-fit: cover;
 }
 
-.img-tilt-1 { transform: rotate(-2deg); }
-.img-tilt-2 { transform: rotate(1.5deg); }
-.img-tilt-3 { transform: rotate(-1deg); }
-.img-tilt-4 { transform: rotate(2deg); }
+/* a very slight tilt, alternating left and right */
+.img-tilt-1 { transform: rotate(-1.5deg); }
+.img-tilt-2 { transform: rotate(1deg); }
+.img-tilt-3 { transform: rotate(-0.8deg); }
+.img-tilt-4 { transform: rotate(1.5deg); }
 
 .manifesto-text h1 {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
   margin-bottom: 24px;
   text-transform: uppercase;
@@ -833,8 +885,8 @@ blockquote {
 }
 
 .manifesto-text .essay-body p {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 18px;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 20px;
   line-height: 1.8;
   color: #222;
 }
@@ -893,14 +945,16 @@ blockquote {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    gap: 4px 12px;
+    gap: 0 10px;
     margin-bottom: 0;
     text-align: left;
+    font-size: 13px;
   }
 
   .site-nav a {
     display: inline-block;
     line-height: 1.45;
+    padding: 9px 0;
     white-space: nowrap;
   }
 
@@ -957,7 +1011,7 @@ blockquote {
   }
 
   .timeline-content p {
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.65;
   }
 
@@ -1079,7 +1133,7 @@ blockquote {
   }
 
   .essay-body p {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.75;
   }
 
@@ -1103,7 +1157,7 @@ blockquote {
 @media (max-width: 380px) {
   .site-nav {
     gap: 3px 10px;
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .page-shell,
@@ -1116,5 +1170,42 @@ blockquote {
   .home-content {
     padding-left: 16px;
     padding-right: 16px;
+  }
+}
+
+/* ─── Small record player (stop button) shown while music plays on other pages ─── */
+#mini-player {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 20;
+  width: 60px;
+  height: 50px;
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+#mini-player[hidden] {
+  display: none;
+}
+
+#mini-player svg {
+  display: block;
+}
+
+#mini-player .mini-record {
+  transform-origin: 48px 52px;
+  animation: mini-spin 2.4s linear infinite;
+}
+
+@keyframes mini-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #mini-player .mini-record {
+    animation: none;
   }
 }
