@@ -6,7 +6,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CONTENT_DIR = path.join(ROOT, "content", "essays");
 const ESSAYS_DIR = path.join(ROOT, "essays");
 const SITE_URL = "https://chaitanyajongra.com";
-const ASSET_VERSION = "20261029-45";
+const ASSET_VERSION = "20261029-47";
 
 const navItems = [
   ["Writings", "essays.html", "essays"],

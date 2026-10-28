@@ -1279,3 +1279,14 @@ blockquote {
   #mini-player { width: 48px; height: 40px; left: 14px; bottom: 14px; }
   #mini-player svg { width: 48px; height: 40px; }
 }
+
+@media (max-width: 600px) {
+  /* Projects: break the description evenly and keep the link on its own line */
+  .timeline-content p { text-wrap: pretty; }
+  .project-timeline .timeline-item:first-child .timeline-content p:first-child { text-wrap: balance; }
+  .timeline-content p a {
+    display: block;
+    width: fit-content;
+    margin-top: 8px;
+  }
+}
