@@ -1209,3 +1209,73 @@ blockquote {
     animation: none;
   }
 }
+
+/* ─── Phones only: about 10% smaller type, calmer spacing, bigger-feeling painting ─── */
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .site-name::before { font-size: 16px; }
+  .site-mark::before { font-size: 16px; }
+  h1 { font-size: 18px; }
+  h2 { font-size: 16px; }
+  h3 { font-size: 15px; }
+  li { font-size: 15px; }
+  .essay-list li { font-size: 15px; }
+  .essay-list .date { font-size: 13px; }
+  .essay-list .desc { font-size: 14px; }
+  .timeline-meta h3 { font-size: 15px; }
+  .timeline-meta .date { font-size: 13px; }
+  .timeline-content p { font-size: 15px; }
+  .timeline-content .note { font-size: 14px; }
+  .film-list .film-title { font-size: 15px; }
+  .film-list .film-meta { font-size: 13px; }
+  .reading-list li { font-size: 15px; }
+  .interests-line { font-size: 15px; }
+  .back-link::before { font-size: 18px; }
+  .essay-date { font-size: 13px; }
+  .contact-info p { font-size: 15px; }
+  .page-title { font-size: 18px; }
+  .essay-row { font-size: 15px; }
+  .essay-article h1 { font-size: 18px; }
+  .essay-body p { font-size: 15px; }
+  .manifesto-text h1 { font-size: 23px; }
+  .manifesto-text .essay-body p { font-size: 18px; }
+
+  .site-nav { font-size: 12px; }
+
+  /* Projects: title and date share a line, items separated by a hairline */
+  .project-timeline { gap: 0; }
+  .timeline-item { gap: 8px; }
+  .timeline-item + .timeline-item {
+    margin-top: 22px;
+    padding-top: 22px;
+    border-top: 1px solid #eee;
+  }
+  .timeline-meta {
+    display: flex;
+    flex: none;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .timeline-meta .date {
+    display: inline;
+    margin-top: 0;
+    white-space: nowrap;
+  }
+  .timeline-content p { margin-bottom: 6px; }
+  .timeline-content .note { margin-top: 6px; }
+
+  /* Reading lists: more air between items so the highlights do not feel congested */
+  .reading-list li {
+    margin-bottom: 11px;
+    line-height: 1.55;
+  }
+  .hl {
+    padding: 2px 5px;
+    margin: 0 -5px;
+  }
+
+  /* smaller stop button */
+  #mini-player { width: 48px; height: 40px; left: 14px; bottom: 14px; }
+  #mini-player svg { width: 48px; height: 40px; }
+}
